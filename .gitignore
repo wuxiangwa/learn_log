@@ -1,5 +1,2 @@
-# Avoid including Experiment files: they can be created and edited locally to test the ipf files
-*.pxp
-*.pxt
-*.uxp
-*.uxt
+exercixe_2017_12_27/node_modules
+.git

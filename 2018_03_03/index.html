@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    margin: 0;
+  }
+
+  #my_button {
+    border: 10px solid black;
+  }
+
+  #demo1 {
+    overflow: auto;
+  }
+
+</style>
+
+<body>
+  <div class="class1 class2 class3" id="demo1" style="color: red">
+    <!-- data-appID="appID" -->
+    <!-- <button id="my_button" style="margin-top: 100px;" onClick="clickTags();">my_button</button> -->
+    <input type="text" id="my_input">
+    <form method="post">
+      <input type="text" name="username" value="username">
+      <input type="button" value="click Me" onClick="alert(username.value);" />
+    </form>
+    <!-- <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=886254399,3956123734&fm=27&gp=0.jpg" id="image_1"> -->
+
+    <button id="button_1">button_1</button>
+    <input type="text" id="my_input"> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/>
+
+
+  </div>
+
+</body>
+<script src="../2018_03_01/事件跨浏览器.js"></script>
+<script>
+  utils.addHandler(window, 'load', function() {
+    console.log('window loaded');
+  });
+  let btn = document.getElementById('button_1');
+  let demo2 = document.getElementById('demo1');
+  // let img = document.getElementById('image_1');
+
+  // utils.addHandler(img, 'load', function() {
+  //   console.log('img loaded');
+  //   event = utils.getEvent(event);
+  //   console.log(utils.getTarget(event).src);
+  // })
+  // console.log(btn.onclick);
+  btn.addEventListener('click', function() {
+    console.log(event);
+    ''
+  }, false)
+
+  utils.addHandler(window, 'scroll', function() {
+    if (document.compatMode == 'CSS1Compat') {
+      console.log(11, document.documentElement.scrollTop);
+      // console.log(11, document.body.scrollTop);
+    } else {
+      console.log(22, document.body.scrollTop);
+    }
+  })
+
+  utils.addHandler(window, 'resize', function() {
+    console.log('resize');
+  })
+
+  utils.addHandler(window, "load", function() {
+    var image = new Image();
+    // let image = document.createElement('img');
+    utils.addHandler(image, "load", function(event) {
+      console.log('image loaded!');
+    });
+    console.log(image);
+    image.src = "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=886254399,3956123734&fm=27&gp=0.jpg";
+  })
+
+
+  const showMessage = function() {
+    console.log(event.type);
+    with(document) {
+      console.log(body);
+    }
+    // alert('hello world');
+  }
+
+</script>
+
+</html>

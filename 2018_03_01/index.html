@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    margin: 0;
+  }
+
+  #my_button {
+    border: 10px solid black;
+  }
+
+  #demo1 {
+    overflow: auto;
+  }
+
+</style>
+
+<body>
+  <div class="class1 class2 class3" id="demo1" style="color: red">
+    <!-- data-appID="appID" -->
+    <button id="my_button" style="margin-top: 100px;" onClick="clickTags();">my_button</button>
+    <iframe frameborder="2" id="_iframe">
+      <body>
+        <button>111</button>
+        <p>111</p>
+      </body>
+
+    </iframe>
+    <input type="text" id="my_input"> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/> my_button
+    <br/>
+  </div>
+
+</body>
+<!-- <script type="module">
+  import getTags from './dom_遍历';
+</script> -->
+<script src="./事件跨浏览器.js"></script>
+<script>
+  // document.body.scrollByLines(5);
+
+  let button = document.querySelector('#my_button');
+  let demo = document.querySelector('#demo1');
+  let demo2 = document.getElementById('demo1');
+  let _iframe = document.getElementById('_iframe');
+  let div = document.querySelector('.class1');
+  // console.log('document:', demo2.contentDocument);
+  demo.scrollIntoView();
+
+  if (utils.isSupport('createRange', 'function')) {
+    let range = document.createRange();
+    range.selectNode(demo2);
+    // console.log(xxxx);
+  }
+
+  function clickTags() {
+    console.log(utils.getTags(demo));
+  }
+
+
+
+
+
+
+  // window.pageYOffset = 100
+  // button.scrollTop = 1000
+  // console.log()
+  // div.innerHTML = '_<script defer>alert(11)<\/script>';
+  // console.log(button); console.log(button.dataset);
+
+
+  function contains(refNode, otherNode) {
+    if (typeof refNode.contains == "function" && (!client.engine.webkit || client.engine.webkit >= 522)) {
+      return refNode.contains(otherNode);
+    } else if (typeof refNode.compareDocumentPosition === "function") {
+      return !!(refNode.compareDocumentPosition(otherNode) & 16);
+    } else {
+      let node = otherNode.parentNode;
+      do {
+        if (node === refNode) {
+          return true;
+        } else {
+          node = node.parentNode;
+        }
+      } while (node !== null);
+      return false;
+    }
+  }
+
+</script>
+
+</html>

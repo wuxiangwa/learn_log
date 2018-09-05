@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style type="text/css">
+    #outer {
+      display: block;
+      width: 300px;
+      height: 300px;
+      background-color: red;
+    }
+
+    #middle {
+      display: block;
+      width: 200px;
+      height: 200px;
+      background-color: green;
+    }
+
+    #inner {
+      display: block;
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="outer">
+      outer
+      <div id="middle">
+        middle
+        <div id="inner">
+          inner
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var outer = document.getElementById('outer');
+    var middle = document.getElementById('middle');
+    var inner = document.getElementById('inner');
+
+    outer.addEventListener('click', function(event) {
+      console.log('outer-->事件捕获');
+      // 阻止事件捕获，内层不会再捕获到事件
+      // event.stopPropagation()
+    }, true);
+    middle.addEventListener('click', function(event) {
+      console.log('middle-->事件捕获');
+      // event.stopPropagation()
+    }, true);
+    inner.addEventListener('click', function(event) {
+      console.log('inner-->事件捕获')
+      // event.stopPropagation()
+    }, true);
+    inner.addEventListener('click', function(event) {
+      console.log('inner-->事件冒泡');
+      // event.stopPropagation()
+    }, false);
+    middle.addEventListener('click', function(event) {
+      console.log('middle-->事件冒泡');
+      // 外层不会事件冒泡，内层不会再捕获到事件
+      event.stopPropagation()
+    }, false);
+    outer.addEventListener('click', function(event) {
+      console.log('outer-->事件冒泡');
+    }, false)
+
+  </script>
+</body>
+
+</html>

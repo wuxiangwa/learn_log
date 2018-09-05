@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- clearfix 规则 由程序员 tony aslett 发明-->
+  <section class="clearfix">
+    <img src="https://i.pinimg.com/564x/a4/46/c6/a446c667e2a898ec3163b7a862eb8f6b.jpg">
+    <p>It's fun to float.</p>
+    <!-- 添加一个非浮动的清除元素 -->
+    <!-- <p class="clear_me"></p> -->
+  </section>
+
+  <footer>here is the footer element thats runs across the bottom of the page.</footer>
+</body>
+
+<style>
+  section {
+    border: 1px solid blue;
+    margin: 0 0 10px 0;
+    /* float: left; */
+    /* width: 100%; */
+    /* overflow: hidden */
+    /* 防止元素被超大内容撑大 //可靠的迫使父元素包含其浮动的子元素 */
+  }
+
+  .clearfix::after {
+    content: '.';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+  }
+
+  img {
+    float: left;
+  }
+
+  /* .clear_me {
+    clear: left;
+  } */
+
+  footer {
+    border: 1px solid red;
+    /* clear: left; */
+  }
+
+</style>
+
+</html>
+
+<!-- 为父元素应用 overflow:hidden -->
+<!-- 浮动父元素 -->
+<!-- 在父元素内容的末尾添加非浮动元素，可以直接在标记中加，也可以通过给父元素添加clearfix类来加（样式表中需要有相应的clearfix 规则 ） -->
